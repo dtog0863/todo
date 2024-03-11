@@ -11,17 +11,21 @@ class TodoController extends Controller
     public function index(){
         $todos=Todo::all();
         return view('index',compact('todos'));
+        // return view('index', ['todos' => $todos]);
     }
 
     public function store(TodoRequest $request){
         $todo = $request->only('content');
+        // $todo = $request->all();でも格納できる
         Todo::create($todo);
         return redirect ('/')->with('message','Todoを作成しました');
     }
 
     public function update(TodoRequest $request){
         $todo=$request->only(['content']);
+        // 変数にリスクエストされた中からコンテントのみ定義付けする
         Todo::find($request->id)->update($todo);
+        // リクエストの中からIDを検索して、コンテントを更新する
         return redirect('/')->with('message' ,'Todoを更新しました');
     }
 

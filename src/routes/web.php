@@ -7,3 +7,5 @@ Route::get('/',[TodoController::class, 'index']);
 Route::post('/todos',[TodoController::class, 'store']);
 Route::patch('/todos/update',[TodoController::class,'update']);
 Route::delete('/todos/delete', [TodoController::class, 'destroy']);
+
+// Putに置き換えれない理由は何か

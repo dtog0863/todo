@@ -6,7 +6,17 @@
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1500px;
-    background-color: aqua;
+}
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav__link {
+    color: #fff;
+    text-decoration: none;
 }
 
 .header__logo {
